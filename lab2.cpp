@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 #include <tuple>
+#include <string>
+#include <cstdio>
 
 // Читаем IP из строки "a.b.c.d" и возвращаем кортеж (a, b, c, d)
 std::tuple<int, int, int, int> parse_ip(const std::string& ip_str) {

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <tuple>
 #include <string>
+#include <cstdio>
 
 std::tuple<int, int, int, int> parse_ip(const std::string& ip_str) {
     int a, b, c, d;

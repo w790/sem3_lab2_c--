@@ -43,3 +43,6 @@ endif()
 install(TARGETS lab2_c++ DESTINATION bin)
 
 include(CPack)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
