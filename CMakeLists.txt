@@ -15,7 +15,7 @@ endif()
 find_package(GTest REQUIRED)
 
 # Main executable
-add_executable(lab2_c++ main.cpp)
+add_executable(lab2_c++ lab2.cpp)
 
 # Test executable
 add_executable(lab2_tests test.cpp)
