@@ -100,49 +100,46 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: |
-          choco install ninja -y
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Setup vcpkg
+      - name: Install vcpkg and dependencies
         run: |
-          git clone https://github.com/microsoft/vcpkg.git
-          .\vcpkg\bootstrap-vcpkg.bat -disableMetrics
-          .\vcpkg\vcpkg install gtest
+            git clone https://github.com/microsoft/vcpkg.git
+            .\vcpkg\bootstrap-vcpkg.bat -disableMetrics
+            .\vcpkg\vcpkg install gtest
 
       - name: Clean build directory
         run: |
-          Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
+            Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
 
-      - name: Configure with Ninja and vcpkg
+      - name: Configure with MSVC and vcpkg
         run: |
-          echo "Building version: ${{ needs.create-release.outputs.new_tag }}"
-          cmake -G "Ninja" -S . -B build `
-            -DVERSION_PROJECT="${{ needs.create-release.outputs.new_tag }}" `
-            -DCMAKE_TOOLCHAIN_FILE="vcpkg/scripts/buildsystems/vcpkg.cmake"
+            echo "Building version: ${{ needs.create-release.outputs.new_tag }}"
+            cmake -S . -B build -DVERSION_PROJECT="${{ needs.create-release.outputs.new_tag }}" -DCMAKE_TOOLCHAIN_FILE="vcpkg/scripts/buildsystems/vcpkg.cmake" -A x64
 
-      - name: Build project
-        run: cmake --build build
+      - name: Build project with verbose output
+        run: cmake --build build --config Release --verbose
 
       - name: Run tests
         run: |
-          .\build\lab2_tests.exe
-          echo "Tests executed successfully"
+            .\build\Release\lab2_tests.exe
+            echo "Tests executed successfully"
 
       - name: Run main program
         run: |
-          echo "1" | .\build\lab2_c++.exe
-          echo "Program executed successfully"
+            echo "1" | .\build\Release\lab2_c++.exe
+            echo "Program executed successfully"
 
       - name: Package (Windows)
         run: |
-          cmake --install build --prefix package
-          cpack -G ZIP --config build/CPackConfig.cmake
+            cmake --install build --prefix package --config Release
+            cpack -G ZIP --config build/CPackConfig.cmake
 
       - name: Upload Windows package
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ needs.create-release.outputs.new_tag }}
-          files: lab2_c++-*.zip
+            tag_name: ${{ needs.create-release.outputs.new_tag }}
+            files: lab2_c++-*.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
