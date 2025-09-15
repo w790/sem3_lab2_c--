@@ -58,17 +58,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ninja-build libgtest-dev build-essential cmake
-
-      - name: Build and install GTest if needed
-        run: |
-          if [ ! -f "/usr/lib/x86_64-linux-gnu/libgtest.a" ]; then
-            sudo apt-get install -y cmake
-            cd /usr/src/gtest
-            sudo cmake CMakeLists.txt
-            sudo make
-            sudo cp *.a /usr/lib/x86_64-linux-gnu/
-          fi
+          sudo apt-get install -y ninja-build libgtest-dev build-essential
 
       - name: Clean build directory
         run: rm -rf build
@@ -79,7 +69,7 @@ jobs:
           cmake -G "Ninja" -S . -B build -DVERSION_PROJECT="${{ needs.create-release.outputs.new_tag }}"
 
       - name: Build project
-        run: cmake --build build --verbose
+        run: cmake --build build
 
       - name: Run tests
         run: |
@@ -114,26 +104,30 @@ jobs:
         run: |
           choco install ninja -y
 
+      - name: Setup vcpkg
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          .\vcpkg\bootstrap-vcpkg.bat -disableMetrics
+          .\vcpkg\vcpkg install gtest
+
       - name: Clean build directory
         run: |
           Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
 
-      - name: Configure with Ninja (without vcpkg for simplicity)
+      - name: Configure with Ninja and vcpkg
         run: |
           echo "Building version: ${{ needs.create-release.outputs.new_tag }}"
-          cmake -G "Ninja" -S . -B build -DVERSION_PROJECT="${{ needs.create-release.outputs.new_tag }}"
+          cmake -G "Ninja" -S . -B build `
+            -DVERSION_PROJECT="${{ needs.create-release.outputs.new_tag }}" `
+            -DCMAKE_TOOLCHAIN_FILE="vcpkg/scripts/buildsystems/vcpkg.cmake"
 
       - name: Build project
-        run: cmake --build build --verbose
+        run: cmake --build build
 
-      - name: Run tests (skip if not available)
+      - name: Run tests
         run: |
-          if (Test-Path "build/lab2_tests.exe") {
-            .\build\lab2_tests.exe
-            echo "Tests executed successfully"
-          } else {
-            echo "Test executable not found, skipping tests"
-          }
+          .\build\lab2_tests.exe
+          echo "Tests executed successfully"
 
       - name: Run main program
         run: |
