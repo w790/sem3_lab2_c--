@@ -13,13 +13,13 @@ endif()
 
 # Find GTest package
 find_package(GTest REQUIRED)
-
+find_package(Threads REQUIRED)
 # Main executable
 add_executable(lab2_c++ lab2.cpp)
 
 # Test executable
 add_executable(lab2_tests test.cpp)
-target_link_libraries(lab2_tests GTest::gtest GTest::gtest_main)
+target_link_libraries(lab2_tests PRIVATE GTest::gtest GTest::gtest_main Threads::Threads)
 
 # Enable testing and add test
 enable_testing()
@@ -40,6 +40,5 @@ endif()
 
 # Installation targets
 install(TARGETS lab2_c++ DESTINATION bin)
-install(TARGETS lab2_tests DESTINATION bin)
 
 include(CPack)
