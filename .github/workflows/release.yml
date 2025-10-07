@@ -58,6 +58,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Clean build directory
+        run: rm -rf build || true
+
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -94,6 +97,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Clean build directory
+        run: Remove-Item -Recurse -Force build -ErrorAction SilentlyContinue
 
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
