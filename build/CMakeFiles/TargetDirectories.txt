@@ -1,0 +1,5 @@
+C:/study/C++SEM3/lab2/build/CMakeFiles/lab2_c++.dir
+C:/study/C++SEM3/lab2/build/CMakeFiles/lab2_tests.dir
+C:/study/C++SEM3/lab2/build/CMakeFiles/test.dir
+C:/study/C++SEM3/lab2/build/CMakeFiles/edit_cache.dir
+C:/study/C++SEM3/lab2/build/CMakeFiles/rebuild_cache.dir

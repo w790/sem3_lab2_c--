@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/study/C++SEM3/lab2/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -D_CRT_SECURE_NO_WARNINGS -g -std=gnu++17 -o CMakeFiles\\lab2_c++.dir\\lab2.cpp.obj -c C:\\study\\C++SEM3\\lab2\\lab2.cpp",
+  "file": "C:\\study\\C++SEM3\\lab2\\lab2.cpp",
+  "output": "CMakeFiles\\lab2_c++.dir\\lab2.cpp.obj"
+},
+{
+  "directory": "C:/study/C++SEM3/lab2/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -D_CRT_SECURE_NO_WARNINGS -g -std=gnu++17 -o CMakeFiles\\lab2_tests.dir\\test.cpp.obj -c C:\\study\\C++SEM3\\lab2\\test.cpp",
+  "file": "C:\\study\\C++SEM3\\lab2\\test.cpp",
+  "output": "CMakeFiles\\lab2_tests.dir\\test.cpp.obj"
+}
+]
