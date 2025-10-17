@@ -14,6 +14,10 @@ add_executable(lab2_c++ lab2.cpp)
 # Используем FetchContent для загрузки GoogleTest
 include(FetchContent)
 
+if(MSVC)
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+endif()
+
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
