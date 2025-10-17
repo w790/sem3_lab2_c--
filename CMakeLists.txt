@@ -14,14 +14,26 @@ enable_testing()
 # Основная программа
 add_executable(lab2_c++ lab2.cpp)
 
+# Используем FetchContent для загрузки GoogleTest
+include(FetchContent)
+
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
+)
+
+# Загружаем и делаем доступным GoogleTest
+FetchContent_MakeAvailable(googletest)
+
 # Тесты
 add_executable(lab2_tests test.cpp)
 
-# Ищем GoogleTest
-find_package(GTest REQUIRED)
-
 # Линкуем тесты с GoogleTest
-target_link_libraries(lab2_tests GTest::gtest_main)
+target_link_libraries(lab2_tests PRIVATE GTest::gtest GTest::gtest_main)
 
 # Добавляем тест в CTest
-add_test(NAME Lab2Tests COMMAND lab2_tests)
+include(GoogleTest)
+gtest_discover_tests(lab2_tests)
+
+# Альтернативный вариант, если gtest_discover_tests не работает:
+# add_test(NAME Lab2Tests COMMAND lab2_tests)

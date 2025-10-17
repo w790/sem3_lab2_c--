@@ -4,5 +4,5 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(Lab2Tests "C:/study/C++SEM3/lab2/build/lab2_tests.exe")
-set_tests_properties(Lab2Tests PROPERTIES  _BACKTRACE_TRIPLES "C:/study/C++SEM3/lab2/CMakeLists.txt;27;add_test;C:/study/C++SEM3/lab2/CMakeLists.txt;0;")
+include("C:/study/C++SEM3/lab2/build/lab2_tests[1]_include.cmake")
+subdirs("_deps/googletest-build")
