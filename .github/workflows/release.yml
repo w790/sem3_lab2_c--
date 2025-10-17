@@ -109,14 +109,14 @@ jobs:
 
       - name: Run tests
         run: |
-          .\build\lab2_tests.exe
+          .\build\Release\lab2_tests.exe
           echo "Tests executed successfully"
 
       - name: Create Windows package
         run: |
           New-Item -ItemType Directory -Path package -Force
-          Copy-Item build\lab2_c++.exe package\
-          Copy-Item build\lab2_tests.exe package\
+          Copy-Item build\Release\lab2_c++.exe package\
+          Copy-Item build\Release\lab2_tests.exe package\
           Compress-Archive -Path package\* -DestinationPath lab2_c++-windows-${{ needs.create-release.outputs.new_tag }}.zip
 
       - name: Upload Windows package to release
