@@ -14,8 +14,7 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_link_libraries",
-			"add_definitions"
+			"target_link_libraries"
 		],
 		"files" : 
 		[
@@ -29,19 +28,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 29,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 32,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 9,
+				"line" : 29,
 				"parent" : 0
 			}
 		]
@@ -53,13 +46,6 @@
 			[
 				{
 					"fragment" : "-g -std=gnu++17"
-				}
-			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 3,
-					"define" : "_CRT_SECURE_NO_WARNINGS"
 				}
 			],
 			"includes" : 

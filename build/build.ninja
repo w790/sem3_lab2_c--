@@ -50,7 +50,6 @@ cmake_ninja_workdir = C$:/study/C++SEM3/lab2/build/
 build cmake_object_order_depends_target_lab2_c++: phony || .
 
 build CMakeFiles/lab2_c++.dir/lab2.cpp.obj: CXX_COMPILER__lab2_c.2b.2b_unscanned_Debug C$:/study/C++SEM3/lab2/lab2.cpp || cmake_object_order_depends_target_lab2_c++
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\lab2_c++.dir\lab2.cpp.obj.d
   FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles\lab2_c++.dir
@@ -84,7 +83,6 @@ build lab2_c++.exe: CXX_EXECUTABLE_LINKER__lab2_c.2b.2b_Debug CMakeFiles/lab2_c+
 build cmake_object_order_depends_target_lab2_tests: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
 build CMakeFiles/lab2_tests.dir/test.cpp.obj: CXX_COMPILER__lab2_tests_unscanned_Debug C$:/study/C++SEM3/lab2/test.cpp || cmake_object_order_depends_target_lab2_tests
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = CMakeFiles\lab2_tests.dir\test.cpp.obj.d
   FLAGS = -g -std=gnu++17
   INCLUDES = -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/include -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest
@@ -284,7 +282,6 @@ build _deps/googletest-build/install/strip: phony _deps/googletest-build/CMakeFi
 build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depends_target_gtest
 
 build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: CXX_COMPILER__gmock_unscanned_Debug C$:/study/C++SEM3/lab2/build/_deps/googletest-src/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj.d
   FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -IC:/study/C++SEM3/lab2/build/_deps/googletest-src/googlemock/include -IC:/study/C++SEM3/lab2/build/_deps/googletest-src/googlemock -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/include -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest
@@ -317,7 +314,6 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps/googletest-bu
 build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
 
 build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_COMPILER__gmock_main_unscanned_Debug C$:/study/C++SEM3/lab2/build/_deps/googletest-src/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d
   FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googlemock/include -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googlemock -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/include -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest
@@ -432,7 +428,6 @@ build _deps/googletest-build/googlemock/install/strip: phony _deps/googletest-bu
 build cmake_object_order_depends_target_gtest: phony || .
 
 build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug C$:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
   FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -IC:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/include -IC:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest
@@ -465,7 +460,6 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps/googletest-bu
 build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
 
 build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_COMPILER__gtest_main_unscanned_Debug C$:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
-  DEFINES = -D_CRT_SECURE_NO_WARNINGS
   DEP_FILE = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj.d
   FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest/include -isystem C:/study/C++SEM3/lab2/build/_deps/googletest-src/googletest
