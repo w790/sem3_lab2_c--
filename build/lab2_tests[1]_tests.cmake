@@ -1,7 +1,0 @@
-add_test([=[ParseIpTest.BasicValidIps]=]  [==[C:/study/C++SEM3/lab2/build/lab2_tests.exe]==] [==[--gtest_filter=ParseIpTest.BasicValidIps]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[ParseIpTest.BasicValidIps]=]  PROPERTIES WORKING_DIRECTORY [==[C:/study/C++SEM3/lab2/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[ParseIpTest.EdgeCases]=]  [==[C:/study/C++SEM3/lab2/build/lab2_tests.exe]==] [==[--gtest_filter=ParseIpTest.EdgeCases]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[ParseIpTest.EdgeCases]=]  PROPERTIES WORKING_DIRECTORY [==[C:/study/C++SEM3/lab2/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[ParseIpTest.SingleDigitBytes]=]  [==[C:/study/C++SEM3/lab2/build/lab2_tests.exe]==] [==[--gtest_filter=ParseIpTest.SingleDigitBytes]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[ParseIpTest.SingleDigitBytes]=]  PROPERTIES WORKING_DIRECTORY [==[C:/study/C++SEM3/lab2/build]==] SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  lab2_tests_TESTS ParseIpTest.BasicValidIps ParseIpTest.EdgeCases ParseIpTest.SingleDigitBytes)
